@@ -9,7 +9,7 @@
 <li>Then create a README.md file and .gitignore file in the root directory</li>
 </ul>
 
-```
+```js
 // First type below code in your root folder terminal.
 git init
 
@@ -30,3 +30,14 @@ git remote add origin https://github.com/FebinAugustine/ongoing.git
 // Then Finally push your existing code to your github using below command.
 git push -u origin master
 ```
+
+<h2>Stage - 2</h2>
+<p>In the terminal go to your backend folder and type the following command: </p>
+
+```js
+npm install express bcryptjs cloudinary cookie-parser cors dotenv ioredis jsonwebtoken mongoose multer nodemailer
+
+npm i nodemon -D
+```
+
+<p>All these arethe basic Dependencies we need for our project. </p>
