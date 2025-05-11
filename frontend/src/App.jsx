@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 function App() {
   return (
     <>
-      <main className="container mx-auto p-4">
+      <main className="bg-black p-4 min-h-screen">
         <Outlet />
       </main>
     </>
