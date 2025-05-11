@@ -1,7 +1,11 @@
+import { Outlet } from "react-router-dom";
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Project OnGoing</h1>
+      <main className="container mx-auto p-4">
+        <Outlet />
+      </main>
     </>
   );
 }

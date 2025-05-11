@@ -35,6 +35,9 @@ git push -u origin master
 <p>In the terminal go to your backend folder and type the following command: </p>
 
 ```js
+
+npm init -y
+
 npm install express bcryptjs cloudinary cookie-parser cors dotenv ioredis jsonwebtoken mongoose multer nodemailer
 
 npm i nodemon -D
