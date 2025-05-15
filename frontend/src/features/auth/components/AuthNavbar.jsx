@@ -2,16 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoIosSunny } from "react-icons/io";
 import { FaMoon } from "react-icons/fa";
-import { useState } from "react";
+import ThemeBtn from "../../../common/components/ThemeBtn";
+import { useTheme } from "../../../store/themeContext";
 
 const AuthNavbar = () => {
-  const [isDark, setIsDark] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    // Toggle dark mode class on root element
-    document.documentElement.classList.toggle("dark");
-  };
+  const { themeMode, toggleTheme } = useTheme();
+  const isDark = themeMode === "dark";
 
   return (
     <nav className="dark:bg-gray-900 bg-white shadow-lg">
@@ -44,9 +40,10 @@ const AuthNavbar = () => {
           {/* Right Section - Navigation & Theme Toggle */}
           <div className="flex items-center space-x-6">
             {/* Theme Toggle */}
+            <ThemeBtn />
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors  md:hidden"
             >
               {isDark ? (
                 <FaMoon className="w-5 h-5 text-gray-500 " />

@@ -4,8 +4,9 @@ import LoginComponent from "../components/LoginComponent";
 const Login = () => {
   return (
     <>
-      {" "}
-      <LoginComponent />{" "}
+      <div className="h-auto dark:bg-gray-800 bg-gray-50 ">
+        <LoginComponent />
+      </div>
     </>
   );
 };

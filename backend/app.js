@@ -2,7 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
 import cors from "cors";
-import errorHandler from "./middlewares/errorHandler.middleware.js";
+// import errorHandler from "./middlewares/errorHandler.middleware.js";
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(helmet());
 // 3. CORS Configuration (simplified - remove duplicate)
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://your-production-domain.com"],
+    origin: ["http://localhost:5173", "https://your-production-domain.com"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -27,11 +27,13 @@ app.use(
 
 // 4. Rate Limiting (after CORS but before routes)
 
-// 5. Routes import
+// Routes import
+import authRouter from "./routes/auth.routes.js";
 
-// 6. Routes declaration
+// Routes declaration
+app.use("/api/v1/auth", authRouter);
 
 // 7. Error handling middleware (MUST be last)
-app.use(errorHandler);
+// app.use(errorHandler);
 
 export default app;
